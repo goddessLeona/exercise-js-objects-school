@@ -1,9 +1,10 @@
 
-//Uppgift 1
+//Uppgift 1,   school
 
 const skola = {
     name: "Greatschool",
-    students: [],
+    students: ["mia"],
+    regulatedStudents:[],
     addstudents: function (student){
         this.students.push(student);
     },
@@ -22,13 +23,29 @@ const skola = {
     city: "Tuva",
     addres: "small road 7",
     zipCode: 23679,
-    /*fireTeacher: function (fireTeacherName){
-        
-    }*/
+    regulateStudent: function (studentR){
+        if(skola.students.includes(studentR)){
+            this.students.splice(0.1.studentR);
+            this.regulatedStudents.push(studentR);
+            console.log(`student ${studentR} are temporary not in school`)
+        }else{
+            console.log(`there are no student with the name ${studentR}`)
+        }
+    },
+    fireTeacher: function (teacherfired){
+        if(skola.teachers.includes(teacherfired)){
+            this.teachers.splice(0.1.teacherfired);
+            matematic.teachers.splice(0.1.teacherfired);
+            console.log(`${teacherfired} is now fired and removed`);
+
+        }else{
+            console.log(`there are no teacher with the name ${teacherfired} working in the school`)
+        }
+    },
 
 }
 
-// Uppgift 2
+// Uppgift 2, subjects
 
 const matematic = {
     name: "Math",
@@ -48,16 +65,24 @@ const gym = {
     teachers: [],
 }
 
-// Uppgift 3
+// Uppgift 3, students
 
 const sofia = {
     name:"Sofia",
     age:16,
     gender: "female",
-    subjects:[],
+    subjects:["art"],
     enlistToSubjec: function (subject){
         this.subjects.push(subject)
     },
+    quitSubject: function (subject){
+        if(sofia.subjects.includes(subject)){
+            this.subjects.splice(0.1.subject);
+            console.log(`${sofia.name} have now quit ${subject}`)
+        }else{
+            console.log(`this class: ${subject} do not excist` )
+        }
+    }
 }
 
 const mia = {
@@ -101,7 +126,7 @@ const lars = {
     },
 }
 
-// Uppgift 4 ?
+// Uppgift 4, teachers
 
 /*Skapa två stycken lärare med namnet som variabel och egenskaperna name 
 och subjects som en tom array.*/
@@ -196,16 +221,30 @@ Skriv ut objekten hela tiden och inspektera dem. Kan du tänka dig någon likhet
 för en skola där en admin till exempel skriver ut en lista på alla ämnen för att se vilka respektive lärare 
 som är ansvariga för respektive kurs.*/
 
-// Uppgift 11
+// Uppgift 11 (not sure if this was the right way to do this, but kind of work)
 
 /*Skapa fler metoder, quitSubject, removeTeacher, relegateStudent, fireTeacher. I vilka objekt hör dessa metoder
  hemma? Och om vi till exempel sparkar en lärare, så måste vi ju ta bort lärarens koppling med skolan, 
  och ämnet/ämnerna som läraren undervisar i. Hur löser vi detta i våra metoder, nu får vi börja tänka oss för lite.*/
 
- // quitSubject
+ // quitSubject - used in the sofia (student) object, using include & splice, function under
+ 
  // removeTeacher -  used in the skol object, using include & splice, function under. 
- // relegateStudent
- // fireTeacher - 
+ 
+ /* relegateStudent - added a emty array named regulatedstudents[] in the school object, added a metod
+ inside the object, function under. one to remove the student from one list and one to add to new list. */
+ 
+ // fireTeacher - solved but not sure if right way of solving it, function under
+
+/*quitSubject: function (subject){
+        if(sofia.subjects.includes(subject)){
+            this.subjects.splice(0.1.subject);
+            console.log(`${sofia.name} have now quit ${subject}`)
+        }else{
+            console.log(`this class: ${subject} do not excist` )
+        }
+    }
+}*/
 
  /*removeteacher: function (nameTeacher){
         if(skola.teachers.includes(nameTeacher)){
@@ -214,3 +253,34 @@ som är ansvariga för respektive kurs.*/
             console.log(`there are no teacher with the name ${nameTeacher}`)
         }
     },*/
+
+    /*regulateStudent: function (studentR){
+        if(skola.students.includes(studentR)){
+            this.students.splice(0.1.studentR);
+            this.regulatedStudents.push(studentR);
+            console.log(`student ${studentR} are temporary not in school`)
+        }else{
+            console.log(`there are no student with the name ${studentR}`)
+        }
+    },*/
+
+    /*fireTeacher: function (teacherfired){
+        if(skola.teachers.includes(teacherfired)){
+            this.teachers.splice(0.1.teacherfired);
+            matematic.teachers.splice(0.1.teacherfired);
+            console.log(`${teacherfired} is now fired and removed`);
+
+        }else{
+            console.log(`there are no teacher with the name ${teacherfired} working in the school`)
+        }
+    },*/
+
+    // Uppgift 12
+    //Lek runt med dessa metoder i konsolen. Lägg till lite här och ta bort lite där. Rätt smidigt va?
+
+    // Uppgift 13
+
+    /*Ny bygger vi på det lite. För att undvika att behöva anropa massa metoder i konsolen när vi startar
+     om programmet (vilket händer vid varje redigering av script-filen) så kan vi längst ner i script-filen 
+     skapa (alltså den koden läses in sist hela tiden) logik för att koppla några studenter till skolan, 
+     några ämnen till studenterna och några lärare till ämnena och så vidare. Skapa sån logik nu.*/
