@@ -7,14 +7,24 @@ const skola = {
     addstudents: function (student){
         this.students.push(student);
     },
-    teachers: [],
+    teachers: ["björn"],
     addTeachers: function (teacher){
         this.teachers.push.teacher;
+    },
+    removeteacher: function (nameTeacher){
+        if(skola.teachers.includes(nameTeacher)){
+            this.teachers.splice(0.1.nameTeacher);
+        }else{
+            console.log(`there are no teacher with the name ${nameTeacher}`)
+        }
     },
     type: "high shoole",
     city: "Tuva",
     addres: "small road 7",
     zipCode: 23679,
+    /*fireTeacher: function (fireTeacherName){
+        
+    }*/
 
 }
 
@@ -23,7 +33,7 @@ const skola = {
 const matematic = {
     name: "Math",
     students: [],
-    teachers: [],
+    teachers: ["björn"],
 }
 
 const english = {
@@ -167,31 +177,40 @@ inte bara lägga till en funktion (alltså en metod eftersom funktionen då är 
 
     console.log(niklas);
     console.log(`#8 what a strange uppgft, fattar inget`)
-  
-  // Tänk på att "this" måste användas för att referera till det egna objektets egenskaper.
-  
-  // Andra sättet är att helt enkelt lägga till en egenskap med hjälp av punktnotation:
-  niklas.addSubject = function (subject) {
-    niklas.subjects.push(subject);
-  };
-  
-
-
 
  // vet inte varför ? värkar smidigare att göra det inanför samma scop
 
 
 
-// Uppgift 9
+// Uppgift 9 (done adda functionerna på objecten som gjordes i de tidigare uppgifterna)
 
 
 /*Skapa följande metoder (Någon eller ett par av metoderna kan förekomma flera gånger fast på olika 
 objekt med olika logik) och lägg in de i rätt typ av objekt: addTeacher, enlistToSubject, 
 addStudent, addSubject*/
 
-//Uppgift 10
+//Uppgift 10 (done, medan jag prövde att lösa Uppgift 11)
 
 /*Prova att leka runt med alla de skapade metoderna i konsolen och försöka lägga till i de olika objekten. 
 Skriv ut objekten hela tiden och inspektera dem. Kan du tänka dig någon likhet med ett riktigt adminprogram 
 för en skola där en admin till exempel skriver ut en lista på alla ämnen för att se vilka respektive lärare 
 som är ansvariga för respektive kurs.*/
+
+// Uppgift 11
+
+/*Skapa fler metoder, quitSubject, removeTeacher, relegateStudent, fireTeacher. I vilka objekt hör dessa metoder
+ hemma? Och om vi till exempel sparkar en lärare, så måste vi ju ta bort lärarens koppling med skolan, 
+ och ämnet/ämnerna som läraren undervisar i. Hur löser vi detta i våra metoder, nu får vi börja tänka oss för lite.*/
+
+ // quitSubject
+ // removeTeacher -  used in the skol object, using include & splice, function under. 
+ // relegateStudent
+ // fireTeacher - 
+
+ /*removeteacher: function (nameTeacher){
+        if(skola.teachers.includes(nameTeacher)){
+            this.teachers.splice(0.1.nameTeacher);
+        }else{
+            console.log(`there are no teacher with the name ${nameTeacher}`)
+        }
+    },*/
