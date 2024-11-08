@@ -3,14 +3,14 @@
 
 const skola = {
     name: "Greatschool",
-    students: ["mia"],
+    students: [],
     regulatedStudents:[],
-    addstudents: function (student){
+    addStudents: function (student){
         this.students.push(student);
     },
-    teachers: ["björn"],
+    teachers: [],
     addTeachers: function (teacher){
-        this.teachers.push.teacher;
+        this.teachers.push(teacher);
     },
     removeteacher: function (nameTeacher){
         if(skola.teachers.includes(nameTeacher)){
@@ -50,7 +50,7 @@ const skola = {
 const matematic = {
     name: "Math",
     students: [],
-    teachers: ["björn"],
+    teachers: [],
 }
 
 const english = {
@@ -71,7 +71,7 @@ const sofia = {
     name:"Sofia",
     age:16,
     gender: "female",
-    subjects:["art"],
+    subjects:[],
     enlistToSubjec: function (subject){
         this.subjects.push(subject)
     },
@@ -283,4 +283,33 @@ som är ansvariga för respektive kurs.*/
     /*Ny bygger vi på det lite. För att undvika att behöva anropa massa metoder i konsolen när vi startar
      om programmet (vilket händer vid varje redigering av script-filen) så kan vi längst ner i script-filen 
      skapa (alltså den koden läses in sist hela tiden) logik för att koppla några studenter till skolan, 
-     några ämnen till studenterna och några lärare till ämnena och så vidare. Skapa sån logik nu.*/
+     några ämnen till studenterna och några lärare till ämnena och så vid are. Skapa sån logik nu.*/ 
+
+     //dummy data
+
+     skola.addTeachers(teacher1);
+     skola.addTeachers(teacher2);
+     skola.addStudents(sofia);
+     skola.addStudents(mia);
+     skola.addStudents(per);
+     skola.addStudents(lars);
+     sofia.enlistToSubjec(english);
+     mia.enlistToSubjec(gym);
+     per.enlistToSubjec(matematic);
+
+     //Uppgift 14
+
+     /*Skapa en funktion (OBS, en fristående funktion) , displayAllStudents som loopar igenom skolans alla
+    studenter med hjälp av en for-loop. Tänk på att en vanlig for..of loop inte fungerar här (varför är det så?).
+    Vi måste använda en for..IN loop, och en for..in loop låter oss loopa igenom ett objekts egenskaper 
+    (även kallad nycklar, keys) och på så sätt kunna koppa åt alla egenskaperna värde. Syntax:*/
+
+  /*  for (keys in medieinstitutet.students) {
+        logik för att printa ut studenterna
+      }*/
+
+    function studentsSchool (){
+        for (let allStudents in skola.students){
+            console.log(`${allStudents} => ${skola.students[allStudents]}`);
+        } 
+    }
