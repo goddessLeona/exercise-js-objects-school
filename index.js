@@ -109,7 +109,7 @@ const anna = {
 const per = {
     name:"Per",
     age:16,
-    gender: "female",
+    gender: "male",
     subjects:[],
     enlistToSubjec: function (subject){
         this.subjects.push(subject)
@@ -119,7 +119,7 @@ const per = {
 const lars = {
     name:"Lars",
     age:16,
-    gender: "female",
+    gender: "male",
     subjects:[],
     enlistToSubjec: function (subject){
         this.subjects.push(subject)
@@ -308,8 +308,10 @@ som är ansvariga för respektive kurs.*/
         logik för att printa ut studenterna
       }*/
 
-    function studentsSchool (){
-        for (let allStudents in skola.students){
-            console.log(`${allStudents} => ${skola.students[allStudents]}`);
+    function displayAllStudents (){
+        for (let studente of skola.students){
+            console.log(studente);
         } 
     }
+
+//displayAllStudents() i consolen så kommer all studenterna upp.
