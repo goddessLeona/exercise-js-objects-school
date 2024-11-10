@@ -315,3 +315,55 @@ som är ansvariga för respektive kurs.*/
     }
 
 //displayAllStudents() i consolen så kommer all studenterna upp.
+
+//Uppgift 15
+
+//Skapa nu fler fristående funktioner, displayAllSubjectsOfStudent(student), 
+//displayAllStudentsEnlistedToSubject(subject), displayAllTeachers. 
+//Varje funktion bör ha något returvärde.
+
+function displayAllSubjectsOfStudent (student){
+    const subjects = student.subjects.map((subject)=> subject.name);
+    return subjects;
+}
+
+mia.enlistToSubjec(english);
+per.enlistToSubjec(gym);
+
+const miaSubjects = displayAllSubjectsOfStudent(mia);
+const perSubjects = displayAllSubjectsOfStudent(per);
+
+console.log(`#15a Subjects of Mia: ${miaSubjects}`);
+console.log(`#15a Subjects of Per: ${perSubjects}`);
+
+function displayAllStudentsEnlistedToSubject (subject){
+    const studentSubjects = subject.students.map((student)=> student.name);
+    return studentSubjects;
+}
+
+// gym.addStudents(anna); does not work to add student to a subject
+
+const studentEnlistedMath = displayAllStudentsEnlistedToSubject(matematic);
+const studentEnlistedGym = displayAllStudentsEnlistedToSubject(gym);
+const studentEnlistedEnglish = displayAllStudentsEnlistedToSubject(english);
+
+console.log(`#15b  Students enlisted to Math: ${studentEnlistedMath}`)
+console.log(`#15b  Students enlisted to Gym: ${studentEnlistedGym}`)
+console.log(`#15b  Students enlisted to English: ${studentEnlistedEnglish}`)
+
+
+function displayAllTeachers (){
+    const allTeachers = skola.teachers.map((teacher)=> teacher.name);
+    return allTeachers;
+
+}
+
+const teachersInSchool = displayAllTeachers(teacher1)
+console.log(`#15c Teachers in the school: ${teachersInSchool} `)
+
+//Uppgift 16
+
+/*Bygg ut med ett ytterligare typ av klasser, lägg till klass som handlar om betyg. 
+Vilka egenskaper ska dessa ha? Vilka metoder kan behövas i denna betygsklass? Hur ska relationen 
+mellan de andra klasserna vara? Vilka metoder bör finnas i de andra typerna av klasser som behandlar betyg? 
+Försöka lösa detta och inspektera och lek runt med det i konsolen.*/
